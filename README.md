@@ -47,12 +47,28 @@ Moving on, we're now going to filter the packet capture to show only ICMP traffi
 </p>
 <br />
 
-Next, initiate a perpetual ping between VM1 and VM2 by typing "ping x.x.x.x -t". Once thats going, we are going to change the firewall settings on VM2 to block ICMP traffic. Search "Network Security Groups" on the Azure portal and choose VM2. Then click "Inbound security rules" and then add the rule. Observe the traffic and notice that the request timed out and on Wireshark, it shows that no response was found.
+Next, initiate a perpetual ping between VM1 and VM2 by typing "ping x.x.x.x -t". Once thats going, we are going to change the firewall settings on VM2 to block ICMP traffic. Search "Network Security Groups" on the Azure portal and choose VM2. Then click "Inbound security rules" and then add the rule. Observe the traffic and notice that the request timed out and on Wireshark, it shows that no response was found. If we delete the rule or allow ICMP traffic again, then the ping will receive a reponse from VM2 and the request will no longer time out. Stop the perpetual ping by CTRL+C.
 <p>
 <img src="https://imgur.com/LTEOIuf.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <img src="https://imgur.com/sgcyX21.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <p>
+</p>
+<br />
+
+Great! Lets look at some other types of traffic. Type "SSH" into the filter. Open up Powershell and type "ssh username@x.x.x.x". The username and IP address will be different than mine.
+<p>
+<img src="https://imgur.com/d4Vg0D3.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 </p>
 <br />
 
