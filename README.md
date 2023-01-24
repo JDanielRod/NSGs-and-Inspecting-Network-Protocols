@@ -56,7 +56,7 @@ Next, initiate a perpetual ping between VM1 and VM2 by typing "ping x.x.x.x -t".
 </p>
 <br />
 
-Great! Lets look at some other types of traffic. Type "SSH" into the filter. Open up Powershell and type "ssh username@x.x.x.x". The username and IP address will be different than mine.
+Great! Lets look at some other types of traffic. Type "SSH" into the filter. Open up Powershell and type "ssh username@x.x.x.x". The username and IP address will be different than mine. Observe the traffic between VM1 and VM2.
 <p>
 <img src="https://imgur.com/d4Vg0D3.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
@@ -64,11 +64,12 @@ Great! Lets look at some other types of traffic. Type "SSH" into the filter. Ope
 </p>
 <br />
 
+Lets now look at DHCP and DNS traffic. Change the filter to DHCP and from VM1's command prompt, type "ipconfig /renew". This will attempt to issue the VM a new IP address. Next, filter for DNS traffic only. DNS translate domain names to IP addresses. We can use the "nslookup" command to ask the DNS server for an IP address of certain domain names.
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/PKkTO7s.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
+<img src="https://imgur.com/huOTp5T.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 </p>
 <br />
 
