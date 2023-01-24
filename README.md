@@ -30,7 +30,7 @@ First, we'll need to create two VMs using Azure. One running Windows 10 and the 
 </p>
 <br />
 
-Next, connect to VM1 using RDP. Go to this link: https://www.wireshark.org/download.html and download Wireshark onto VM1. We'll be using this to inspect network traffic between the two VMs. Once downloaded, click Ethernet and then click "start capturing packets".
+Next, connect to VM1 using RDP. Go to this link: https://www.wireshark.org/download.html and download Wireshark onto VM1. We'll be using this to inspect network traffic between the two VMs. Once downloaded, click Ethernet and then click "start capturing packets". Observe the traffic. 
 <p>
 <img src="https://imgur.com/Bk8wNL5.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
@@ -38,19 +38,21 @@ Next, connect to VM1 using RDP. Go to this link: https://www.wireshark.org/downl
 </p>
 <br />
 
+Moving on, we're now going to filter the packet capture to show only ICMP traffic. Type "icmp" in the filter bar. ICMP is a protocol that is used by network devices to communicate connection issues. We're going to ping VM2 from VM1 by obtaining VM2's private IP address. This can be found on the azure portal. Open the command prompt on VM1 and type, "ping" and then VM2's private IP address. Observe the traffic on Wireshark.
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/yWNw2Ep.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
+<img src="https://imgur.com/LDliLWc.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 </p>
 <br />
 
+Next, initiate a perpetual ping between VM1 and VM2 by typing "ping x.x.x.x -t". Once thats going, we are going to change the firewall settings on VM2 to block ICMP traffic. Search "Network Security Groups" on the Azure portal and choose VM2. Then click "Inbound security rules" and then add the rule. Observe the traffic and notice that the request timed out and on Wireshark, it shows that no response was found.
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://imgur.com/LTEOIuf.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
+<img src="https://imgur.com/sgcyX21.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 </p>
 <br />
 
